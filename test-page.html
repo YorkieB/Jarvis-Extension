@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comet Extension Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #667eea;
+    }
+    .search-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #5568d3;
+    }
+    .form-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .form-group {
+      margin: 15px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .links-section {
+      margin: 30px 0;
+    }
+    .links-section a {
+      display: block;
+      margin: 10px 0;
+      color: #667eea;
+      text-decoration: none;
+    }
+    .links-section a:hover {
+      text-decoration: underline;
+    }
+    .content-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-left: 4px solid #667eea;
+    }
+    .info-box {
+      background: #e7f3ff;
+      border: 1px solid #b3d9ff;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌟 Comet Extension Test Page</h1>
+  
+  <div class="info-box">
+    <strong>How to test:</strong>
+    <ol>
+      <li>Load the Comet extension in your browser</li>
+      <li>Press <kbd>Ctrl+Shift+Space</kbd> to open the sidecar</li>
+      <li>Try the example tasks below</li>
+    </ol>
+  </div>
+
+  <div class="search-section">
+    <h2>Search Section</h2>
+    <p>Test task: "Search for artificial intelligence"</p>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Enter your search query..." aria-label="Search">
+      <button id="search-button" type="button">Search</button>
+    </div>
+    <div id="search-results" style="margin-top: 15px;"></div>
+  </div>
+
+  <div class="form-section">
+    <h2>Contact Form</h2>
+    <p>Test task: "Fill email with test@example.com"</p>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" aria-label="Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" aria-label="Email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px;" aria-label="Message"></textarea>
+      </div>
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+
+  <div class="links-section">
+    <h2>Navigation Links</h2>
+    <p>Test task: "Click on About Us"</p>
+    <nav aria-label="Main navigation">
+      <a href="#home" id="home-link">Home</a>
+      <a href="#about" id="about-link">About Us</a>
+      <a href="#services" id="services-link">Our Services</a>
+      <a href="#contact" id="contact-link">Contact</a>
+      <a href="#pricing" id="pricing-link">Pricing</a>
+    </nav>
+  </div>
+
+  <div class="content-section">
+    <h2>Content for Research</h2>
+    <p>Test research: "What is this page about?"</p>
+    <article>
+      <h3>About Comet Extension</h3>
+      <p>
+        Comet is an advanced browser extension that uses accessibility tree perception 
+        to understand web page structure. It combines local heuristics with optional 
+        AI API integration to provide hybrid inference capabilities.
+      </p>
+      <p>
+        The extension features agentic execution for multi-step task chaining, 
+        allowing users to automate complex workflows with natural language commands. 
+        The contextual sidecar UI provides an intuitive interface for interaction.
+      </p>
+      <h3>Key Features</h3>
+      <ul>
+        <li>Accessibility Tree Perception</li>
+        <li>Hybrid Inference System</li>
+        <li>Multi-step Task Execution</li>
+        <li>Deep Research Capabilities</li>
+        <li>Contextual Sidecar Interface</li>
+      </ul>
+    </article>
+  </div>
+
+  <script>
+    // Add interactivity for testing
+    document.getElementById('search-button').addEventListener('click', function() {
+      const query = document.getElementById('search-input').value;
+      const resultsDiv = document.getElementById('search-results');
+      
+      if (query) {
+        resultsDiv.innerHTML = `<p>Searching for: <strong>${query}</strong></p>
+          <p>Result 1: Introduction to ${query}</p>
+          <p>Result 2: Advanced ${query} techniques</p>
+          <p>Result 3: ${query} best practices</p>`;
+      }
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      alert(`Form submitted!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+    });
+
+    // Add click handlers for navigation
+    document.querySelectorAll('.links-section a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert(`Navigating to: ${this.textContent}`);
+      });
+    });
+  </script>
+</body>
+</html>
