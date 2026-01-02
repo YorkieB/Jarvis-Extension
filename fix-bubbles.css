@@ -1,0 +1,66 @@
+/* Fix for chat bubble readability issues */
+
+/* Override opacity for user message bubbles */
+.mb-6.flex.justify-end .relative.max-w-\[75\%\] .rounded-2xl {
+  opacity: 1 !important;
+}
+
+/* Ensure user message background is visible with proper opacity */
+.mb-6.flex.justify-end .relative.max-w-\[75\%\] .rounded-2xl.rounded-br-sm {
+  background-color: #1e40af !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+/* Make user message text white for better contrast */
+.mb-6.flex.justify-end .relative.max-w-\[75\%\] .rounded-2xl .relative.z-10 {
+  color: #ffffff !important;
+}
+
+/* Ensure user message content is readable */
+.mb-6.flex.justify-end .relative.max-w-\[75\%\] .rounded-2xl .whitespace-pre-wrap {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+/* Fix assistant message opacity and readability */
+.mb-6.flex.justify-start .relative.max-w-\[75\%\] .rounded-2xl {
+  opacity: 1 !important;
+  background: linear-gradient(to bottom right, rgba(168,85,247,0.95), rgba(236,72,153,0.95)) !important;
+}
+
+/* Ensure assistant message text is white */
+.mb-6.flex.justify-start .relative.max-w-\[75\%\] .rounded-2xl .relative.z-10 {
+  color: #ffffff !important;
+}
+
+/* Make all message text more readable */
+.mb-6 .rounded-2xl .leading-relaxed {
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+/* Ensure markdown content in messages is readable */
+.mb-6 .rounded-2xl p,
+.mb-6 .rounded-2xl span,
+.mb-6 .rounded-2xl a,
+.mb-6 .rounded-2xl li,
+.mb-6 .rounded-2xl code {
+  color: inherit !important;
+}
+
+/* Code blocks within messages */
+.mb-6 .rounded-2xl code {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+}
+
+/* Pre blocks within messages */
+.mb-6 .rounded-2xl pre {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  overflow-x: auto !important;
+}
